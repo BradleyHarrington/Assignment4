@@ -115,80 +115,75 @@
 
 // 10.	Create your own String method called findWords that inherits from the native String Object. This method should find all instances of a specific word within a provided paragraph of text. It should then alert out to the user the number of time that word was found in the paragraph.
 
-var theWord = "from";
-var findWords = "df";
-String.prototype.findWords = function() {
-    window.console.log(message.match(/\bfrom\b/gi).length);
-return findWords;
-}
-var message = "From my experience of tasting the finest wines from around the world, all the greatest wines possess authenticity, harmony, and elegance. These are the qualities I constantly try to capture in my wines. The ultimate goal is to create wines that are seamless and textural with enough structure and balance to complement fine cuisine.";
-window.console.log(message.findWords());
 
-//String.prototype.reverse = function() {
-//    var reverse = "";
-//    for (var i = this.length - 1; i >= 0; i--) {
-//        reverse += this.charAt(i);
-//    }
-//    return reverse;
+//String.prototype.findWords = function() {
+//    var findWords = "";
+//
+//    
+//    window.console.log("The word \"from\" is found " + message.match(/from/gi).length + " times in the message");
+//return findWords;
 //}
-//var message = "JavaScript";
-//console.log(message.reverse());	//Displays "tpircSavaJ"
-
-
+//var message = "From my experience of tasting the finest wines from around the world, all the greatest wines possess authenticity, harmony, and elegance. These are the qualities I constantly try to capture in my wines. The ultimate goal is to create wines that are seamless and textural with enough structure and balance to complement fine cuisine.";
+//
+//message.findWords();
 
 
 
 //// 11.	Create an abstract base class called Vehicle that accepts four parameters including make (string), model (string), total miles (number), and the mileage for the last oil change (number).
-//
+
 //var Vehicle = function(make, model, totalMiles, lastOilChange) {
 //    
 //}
-//
+
 //// 12.	Within the Vehicle class, create 6 public properties named make, model, totalMiles, drivenMiles, type, and lastOilChange. Initialize the make, model, totalMiles, and lastOilChange properties with their respective arguments. The drivenMiles property should be initialized to 0 and the type property should be initialized to an empty string.
-//
+
 //var Vehicle = function(make, model, totalMiles, lastOilChange) {
 //    this.type = "";
 //    this.make = make;
 //    this.model = model;
-//    this.drivenMiles = 0;
 //    this.totalMiles = 0;
 //    this.lastOilChange = 0;
+//    this.drivenMiles = 0;
 //}
-//
-//
-//
+
+
+
 //// 13.	Now create a public method called drive() that accepts a parameter (perhaps miles). Increment and set the public drivenMiles property to the miles argument. Return the method (return this).
-//
+
 //Vehicle.prototype.drive = function(miles) {
-//    this.miles += miles;
+//    this.drivenMiles += Number(miles);
+//    alert("line 155 " + this.drivenMiles);
 //    return this;
+//    
 //}
-//
-//
-//// 14.	Now create a public method called checkOil(). Within this method, check to see if the total miles minus the last oil change plus the driven miles are less than or equal to 3000. If they are, return a message to the user that they need an oil change. Otherwise, return the method (return this).
-//
+
+
+//// 14.	Now create a public method called checkOil(). Within this method, check to see if the total miles minus the last oil change plus the driven miles are greater than or equal to 3000. If they are, return a message to the user that they need an oil change. Otherwise, return the method (return this).
+
 //Vehicle.prototype.checkOil = function() {
-//    if ((this.totalMiles - this.lastOilChange) >= 3000) {
-//        return "You need an oil change!";
+////    this.drivenMiles = this.totalMiles - this.lastOilChange;
+//    alert("Line 165 " + this.drivenMiles);
+//    if ((this.drivenMiles) >= 3000) {
+//        window.console.log("You need an oil change!");
 //    } else {
 //        return this;
 //    }
 //}
-//
+
 //// 15.	Now create a new sub class called Car that accepts one parameter for the amount of doors that the car has. 
-//
-////var Car = function(doorCount) {
-////    
-////}
-//
+
+//var Car = function(doorCount) {
+//    
+//}
+
 //// 16.	Within the new Car class, initialize a public property called doorCount and set it equal to the argument.
-//
-////var Car = function(doorCount) {
-////    this.doorCount = doorCount;
-////}
-//
+
+//var Car = function(doorCount) {
+//    this.doorCount = doorCount;
+//}
+
 //// 17.	Within the Car class use a conditional to check and see if the door count is greater than 2. If it is, set the type property to Sedan. Otherwise, set it to coupe.
-//
+
 //var Car = function(doorCount) {
 //    this.doorCount = doorCount;
 //    if (this.doorCount > 2) {
@@ -197,21 +192,21 @@ window.console.log(message.findWords());
 //        this.type = "Coupe";
 //    }
 //}
-//
-//
+
+
 //// 18.	Now, make sure that the Car class inherits from the Vehicle base class. Use this opportunity to pass in the make, model, total miles, and last oil change values into the Vehicle’s constructor. 
-//
+
 //Car.prototype = new Vehicle("Honda", "Accord", 20000, 15000);
-//
-//
+
+
 //// 19.	Then, create a new instance of the Car class and pass in the number of doors that the car has into the Car’s constructor.
-//
+
 //var myCar = new Car(4);
-//
+
 //// 20.	Finally, using method chaining, call the drive() method of the car object, passing in a numeric value as a parameter. At the same time, call the checkOil() method. Display the results in the console window. You will either get a message indicating your car needs an oil change or you will get the object hierarchy.
-//
-//console.log(myCar.drive(15500).checkOil());
-//
+
+//console.log(myCar.drive(1000).checkOil());
+
 
 ////////////////////// The Recipe Card /////////////////////
 
@@ -273,4 +268,30 @@ window.console.log(message.findWords());
 //}
 
 
+//////////////////// Fill In the Blanks ///////////////////////
 
+
+//(function() {
+//    var person = {
+//        buy1: function() { window.console.log("I'm rich, I drive a Ferrari!"); },
+//        buy2: function() { window.console.log("I got a job, I'm not poor, I drive a Honda Accord");},
+//        buy3: function() { window.console.log("I'm poor, I drive a VW Beetle with duct tape"); }
+//    };
+//
+//    var car = {
+//        drive: function() { window.console.log("Vroom Vroom"); },
+//        price: 199999
+//    };
+//
+//    // print vroom vroom
+//    car.drive();
+//
+//    // print 'I'm rich'
+//    if (car.price > 100000) {
+//        person.buy1(car);
+//    } else if (car.price <= 100000 && car.price >= 30000) {
+//        person.buy2(car);
+//    } else {
+//        person.buy3(car);
+//    }
+//}());
